@@ -1249,3 +1249,13 @@ body {
         justify-content: center;
     }
 }
+.contacts-map {
+    height: 450px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .contacts-map {
+        height: 350px;
+    }
+}
