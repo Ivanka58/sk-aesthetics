@@ -374,11 +374,28 @@
                 </div>
                 
                 <div class="contacts-map reveal-right">
-                    <div class="map-placeholder">
-                        <span>🗺️ Карта</span>
-                        <small>Яндекс.Карты / Google Maps</small>
-                        <p>вставьте iframe карт здесь</p>
-                    </div>
+                    <div id="salon-map" style="width:100%; height:100%; border-radius: 20px; z-index: 1;"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Координаты пр. Ильича 17В, Донецк (приблизительные — уточните если нужно)
+    var map = L.map('salon-map').setView([47.9945, 37.8025], 16);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+    
+    var customIcon = L.divIcon({
+        className: 'custom-marker',
+        html: '<div style="background: #C9A96E; width: 40px; height: 40px; border-radius: 50%; border: 3px solid white; box-shadow: 0 4px 15px rgba(201,169,110,0.5); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">✦</div>',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40]
+    });
+    
+    L.marker([47.9945, 37.8025], {icon: customIcon})
+        .addTo(map)
+        .bindPopup('<b style="color: #C9A96E; font-family: Cormorant Garamond; font-size: 1.2rem;">SK Aesthetics</b><br>пр. Ильича, 17В, 1-й этаж<br><a href="https://yandex.ru/maps/?text=проспект Ильича 17В Донецк" target="_blank" style="color: #C9A96E;">Построить маршрут</a>')
+        .openPopup();
+</script>
                 </div>
             </div>
         </div>
