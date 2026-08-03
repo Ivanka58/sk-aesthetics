@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Запускаем счётчик, если это статистика
                 const statNumbers = entry.target.querySelectorAll('.stat-number');
                 statNumbers.forEach(stat => animateCounter(stat));
             }
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.getElementById('mobileToggle');
     const navLinks = document.getElementById('navLinks');
     
-    // Создаём мобильное меню и оверлей
     const mobileMenu = document.createElement('div');
     mobileMenu.className = 'mobile-menu';
     mobileMenu.innerHTML = navLinks.innerHTML;
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', toggleMenu);
     mobileOverlay.addEventListener('click', toggleMenu);
     
-    // Закрываем меню при клике на ссылку
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             toggleMenu();
@@ -126,58 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // ===== Parallax Effect for Hero =====
-    const hero = document.querySelector('.hero');
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.4;
-        if (scrolled < window.innerHeight) {
-            hero.style.backgroundPositionY = `${rate}px`;
-        }
-    });
-    
-    // ===== Service Card Hover Sound (optional visual feedback) =====
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transition = 'all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        });
-    });
-    
-    // ===== Gallery Lightbox Placeholder =====
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            // Здесь можно подключить полноценную галерею (Fancybox, Lightbox и т.д.)
-            console.log(`Открыть изображение ${index + 1}`);
-        });
-    });
-    
-    // ===== Active Navigation Link on Scroll =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinkElements = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinkElements.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // ===== Preloader (simple fade out) =====
+    // ===== Preloader =====
     const preloader = document.createElement('div');
     preloader.style.cssText = `
         position: fixed;
@@ -212,24 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => preloader.remove(), 600);
         }, 800);
     });
-    
-    // ===== Typing Effect for Hero Badge =====
-    const heroBadge = document.querySelector('.hero-badge');
-    if (heroBadge) {
-        const text = heroBadge.textContent;
-        heroBadge.textContent = '';
-        let i = 0;
-        
-        const typeWriter = () => {
-            if (i < text.length) {
-                heroBadge.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        };
-        
-        setTimeout(typeWriter, 1000);
-    }
     
     console.log('✦ SK Aesthetics website loaded successfully!');
 });
