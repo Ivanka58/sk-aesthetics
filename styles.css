@@ -31,7 +31,10 @@
     box-sizing: border-box;
 }
 
-html {
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
     scroll-behavior: smooth;
     font-size: 16px;
 }
@@ -41,13 +44,19 @@ body {
     color: var(--color-text);
     background: var(--color-bg);
     line-height: 1.6;
-    overflow-x: hidden;
+}
+
+img, iframe, video, embed, object {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    width: 100%;
 }
 
 /* ========================================
@@ -81,6 +90,7 @@ body {
     line-height: 1.2;
     margin-bottom: 16px;
     color: var(--color-dark);
+    word-wrap: break-word;
 }
 
 .section-title .accent {
@@ -135,6 +145,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo {
@@ -206,6 +217,7 @@ body {
     border: 1px solid var(--color-primary);
     border-radius: 30px;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .nav-phone:hover {
@@ -247,6 +259,7 @@ body {
     justify-content: center;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     overflow: hidden;
+    width: 100%;
 }
 
 .hero::before {
@@ -254,8 +267,8 @@ body {
     position: absolute;
     top: -50%;
     right: -20%;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, rgba(201, 169, 110, 0.15) 0%, transparent 70%);
     animation: float 8s ease-in-out infinite;
 }
@@ -265,8 +278,8 @@ body {
     position: absolute;
     bottom: -30%;
     left: -10%;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
     animation: float 10s ease-in-out infinite reverse;
 }
@@ -289,6 +302,7 @@ body {
     color: var(--color-white);
     padding: 0 24px;
     max-width: 900px;
+    width: 100%;
 }
 
 .hero-badge {
@@ -307,11 +321,12 @@ body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-size: clamp(2rem, 7vw, 5rem);
     font-weight: 300;
     line-height: 1.1;
     margin-bottom: 20px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    word-wrap: break-word;
 }
 
 .hero-title .accent {
@@ -320,7 +335,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: rgba(255,255,255,0.7);
     margin-bottom: 36px;
     line-height: 1.7;
@@ -351,6 +366,7 @@ body {
     transition: var(--transition);
     border: none;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -381,6 +397,7 @@ body {
     justify-content: center;
     gap: 14px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .hero-pill {
@@ -445,6 +462,7 @@ body {
 .about {
     padding: 120px 0;
     background: var(--color-white);
+    overflow: hidden;
 }
 
 .about-grid {
@@ -456,6 +474,7 @@ body {
 
 .about-image {
     position: relative;
+    max-width: 100%;
 }
 
 .image-frame {
@@ -463,13 +482,13 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     height: 500px;
+    width: 100%;
 }
 
 .image-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .experience-badge {
@@ -505,12 +524,14 @@ body {
 
 .about-content {
     padding-right: 20px;
+    min-width: 0;
 }
 
 .about-text {
     color: var(--color-text-light);
     margin-bottom: 20px;
     line-height: 1.8;
+    word-wrap: break-word;
 }
 
 .about-stats {
@@ -518,7 +539,8 @@ body {
     gap: 40px;
     margin-top: 36px;
     padding-top: 36px;
-    border-top: : 1px solid rgba(0,0,0,0.08);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -547,6 +569,7 @@ body {
 .services {
     padding: 120px 0;
     background: var(--color-bg);
+    overflow: hidden;
 }
 
 .section-header {
@@ -562,6 +585,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    width: 100%;
 }
 
 .service-card {
@@ -571,6 +595,7 @@ body {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     position: relative;
+    min-width: 0;
 }
 
 .service-card:hover {
@@ -588,6 +613,7 @@ body {
     position: relative;
     height: 240px;
     overflow: hidden;
+    width: 100%;
 }
 
 .service-card.wide .service-image {
@@ -599,7 +625,6 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: var(--transition);
 }
 
@@ -621,6 +646,7 @@ body {
 
 .service-content {
     padding: 28px;
+    min-width: 0;
 }
 
 .service-icon {
@@ -634,6 +660,7 @@ body {
     font-weight: 600;
     margin-bottom: 16px;
     color: var(--color-dark);
+    word-wrap: break-word;
 }
 
 .service-list {
@@ -649,6 +676,7 @@ body {
     font-size: 0.9rem;
     color: var(--color-text-light);
     transition: var(--transition);
+    gap: 12px;
 }
 
 .service-list li:hover {
@@ -661,7 +689,7 @@ body {
     color: var(--color-primary);
     font-size: 0.85rem;
     white-space: nowrap;
-    margin-left: 12px;
+    flex-shrink: 0;
 }
 
 .extra-services {
@@ -679,6 +707,8 @@ body {
     border-radius: 12px;
     font-size: 0.9rem;
     transition: var(--transition);
+    gap: 10px;
+    min-width: 0;
 }
 
 .extra-item:hover {
@@ -688,6 +718,7 @@ body {
 
 .extra-name {
     color: var(--color-text);
+    word-wrap: break-word;
 }
 
 /* ========================================
@@ -717,6 +748,7 @@ body {
     gap: 24px;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .feature-card {
@@ -728,6 +760,7 @@ body {
     text-align: center;
     color: var(--color-white);
     transition: var(--transition);
+    min-width: 0;
 }
 
 .feature-card:hover {
@@ -746,6 +779,7 @@ body {
     font-size: 1.3rem;
     margin-bottom: 10px;
     font-weight: 600;
+    word-wrap: break-word;
 }
 
 .feature-card p {
@@ -761,6 +795,7 @@ body {
 .gallery {
     padding: 120px 0;
     background: var(--color-white);
+    overflow: hidden;
 }
 
 .gallery-grid {
@@ -768,6 +803,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 280px);
     gap: 20px;
+    width: 100%;
 }
 
 .gallery-item {
@@ -776,13 +812,13 @@ body {
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     cursor: pointer;
+    min-width: 0;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: var(--transition);
 }
 
@@ -806,6 +842,7 @@ body {
 .contacts {
     padding: 120px 0;
     background: var(--color-bg);
+    overflow: hidden;
 }
 
 .contacts-wrapper {
@@ -814,6 +851,7 @@ body {
     gap: 40px;
     align-items: stretch;
     min-height: 450px;
+    width: 100%;
 }
 
 .contact-item {
@@ -838,6 +876,7 @@ body {
 
 .contact-details {
     flex: 1;
+    min-width: 0;
 }
 
 .contact-label {
@@ -853,6 +892,7 @@ body {
 .contact-details p {
     color: var(--color-text-light);
     line-height: 1.6;
+    word-wrap: break-word;
 }
 
 .contact-link {
@@ -861,6 +901,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     transition: var(--transition);
+    word-wrap: break-word;
 }
 
 .contact-link:hover {
@@ -871,6 +912,7 @@ body {
     display: flex;
     gap: 16px;
     margin-top: 36px;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -914,6 +956,7 @@ body {
     height: 100%;
     min-height: 450px;
     background: var(--color-bg-dark);
+    width: 100%;
 }
 
 .contacts-map iframe {
@@ -932,6 +975,7 @@ body {
     background: var(--color-dark);
     color: var(--color-white);
     padding: 80px 0 0;
+    overflow: hidden;
 }
 
 .footer-grid {
@@ -939,6 +983,7 @@ body {
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 48px;
     margin-bottom: 60px;
+    width: 100%;
 }
 
 .footer-brand .logo {
@@ -951,6 +996,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.7;
     max-width: 300px;
+    word-wrap: break-word;
 }
 
 .footer-nav h5,
@@ -974,6 +1020,7 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
+    word-wrap: break-word;
 }
 
 .footer-nav a:hover {
@@ -985,12 +1032,14 @@ body {
     color: rgba(255,255,255,0.6);
     font-size: 0.9rem;
     margin-bottom: 10px;
+    word-wrap: break-word;
 }
 
 .footer-social {
     display: flex;
     gap: 16px;
     margin-top: 16px;
+    flex-wrap: wrap;
 }
 
 .footer-social a {
@@ -1013,6 +1062,8 @@ body {
     align-items: center;
     font-size: 0.8rem;
     color: rgba(255,255,255,0.4);
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 /* ========================================
@@ -1096,6 +1147,7 @@ body {
     padding: 100px 40px 40px;
     transition: var(--transition-slow);
     box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+    overflow-y: auto;
 }
 
 .mobile-menu.active {
@@ -1168,13 +1220,29 @@ body {
         display: flex;
     }
     
+    .hero::before {
+        width: 300px;
+        height: 300px;
+        right: -30%;
+    }
+    
+    .hero::after {
+        width: 250px;
+        height: 250px;
+        left: -20%;
+    }
+    
     .hero-title {
-        font-size: 2.5rem;
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
     }
     
     .hero-pill {
-        font-size: 0.8rem;
-        padding: 8px 16px;
+        font-size: 0.75rem;
+        padding: 8px 14px;
     }
     
     .about-grid {
@@ -1182,13 +1250,22 @@ body {
     }
     
     .about-image {
-        max-width: 500px;
+        max-width: 100%;
         margin: 0 auto;
+    }
+    
+    .image-frame {
+        height: 350px;
     }
     
     .experience-badge {
         right: 10px;
         bottom: -10px;
+        padding: 18px 24px;
+    }
+    
+    .exp-number {
+        font-size: 2rem;
     }
     
     .services-grid {
@@ -1202,6 +1279,11 @@ body {
     
     .service-card.wide .service-image {
         height: 200px;
+        min-height: auto;
+    }
+    
+    .service-list li {
+        font-size: 0.85rem;
     }
     
     .features-grid {
@@ -1216,15 +1298,24 @@ body {
     .gallery-item.large {
         grid-column: span 2;
         grid-row: span 1;
-        height: 300px;
+        height: 250px;
     }
     
     .gallery-item {
-        height: 200px;
+        height: 160px;
     }
     
     .extra-services {
         grid-template-columns: 1fr;
+    }
+    
+    .contacts-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacts-map {
+        min-height: 300px;
+        order: -1;
     }
     
     .footer-grid {
@@ -1240,14 +1331,10 @@ body {
     
     .about-stats {
         justify-content: center;
+        gap: 24px;
     }
     
-    .contacts-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .contacts-map {
-        min-height: 350px;
-        order: -1;
+    .stat-number {
+        font-size: 1.8rem;
     }
 }
