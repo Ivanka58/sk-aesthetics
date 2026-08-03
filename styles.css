@@ -12,7 +12,6 @@
     --color-text-light: #6B6B6B;
     --color-white: #FFFFFF;
     --color-dark: #1A1A1A;
-    --color-accent: #D4A574;
     
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
@@ -334,7 +333,7 @@ body {
     display: flex;
     gap: 16px;
     justify-content: center;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
@@ -377,37 +376,33 @@ body {
     color: var(--color-primary);
 }
 
-.btn-small {
-    padding: 10px 24px;
-    font-size: 0.8rem;
-    background: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    margin-top: 16px;
-}
-
-.btn-small:hover {
-    background: var(--color-primary);
-    color: var(--color-white);
-}
-
 .hero-features {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
-.feature-item {
-    display: flex;
+.hero-pill {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 50px;
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.95);
+    white-space: nowrap;
+    transition: var(--transition);
 }
 
-.feature-icon {
-    font-size: 1.3rem;
+.hero-pill:hover {
+    background: rgba(201, 169, 110, 0.2);
+    border-color: rgba(201, 169, 110, 0.4);
+    transform: translateY(-2px);
 }
 
 .scroll-indicator {
@@ -444,52 +439,6 @@ body {
 }
 
 /* ========================================
-   Image Placeholders
-   ======================================== */
-
-.image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #e8e0d5 0%, #d4ccc0 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-light);
-    font-size: 0.9rem;
-    border-radius: inherit;
-    position: relative;
-    overflow: hidden;
-}
-
-.image-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-    animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
-}
-
-.image-placeholder span {
-    font-weight: 600;
-    color: var(--color-text);
-}
-
-.image-placeholder small {
-    font-size: 0.7rem;
-    margin-top: 4px;
-    opacity: 0.6;
-}
-
-/* ========================================
    About Section
    ======================================== */
 
@@ -514,6 +463,13 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-lg);
     height: 500px;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .experience-badge {
@@ -547,6 +503,10 @@ body {
     opacity: 0.9;
 }
 
+.about-content {
+    padding-right: 20px;
+}
+
 .about-text {
     color: var(--color-text-light);
     margin-bottom: 20px;
@@ -558,7 +518,7 @@ body {
     gap: 40px;
     margin-top: 36px;
     padding-top: 36px;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    border-top: : 1px solid rgba(0,0,0,0.08);
 }
 
 .stat-item {
@@ -631,7 +591,20 @@ body {
 }
 
 .service-card.wide .service-image {
-    height: auto;
+    height: 100%;
+    min-height: 240px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
 }
 
 .service-overlay {
@@ -805,9 +778,20 @@ body {
     cursor: pointer;
 }
 
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
 .gallery-item:hover {
-    transform: scale(1.03);
     box-shadow: var(--shadow-lg);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
 }
 
 .gallery-item.large {
@@ -826,9 +810,10 @@ body {
 
 .contacts-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    align-items: start;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+    align-items: stretch;
+    min-height: 450px;
 }
 
 .contact-item {
@@ -928,30 +913,15 @@ body {
     box-shadow: var(--shadow-lg);
     height: 100%;
     min-height: 450px;
+    background: var(--color-bg-dark);
 }
 
-.map-placeholder {
+.contacts-map iframe {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #e0d8cd 0%, #c8bfb2 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-light);
-    text-align: center;
-    padding: 40px;
-}
-
-.map-placeholder span {
-    font-size: 3rem;
-    margin-bottom: 12px;
-}
-
-.map-placeholder small {
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 8px;
+    border: none;
+    display: block;
+    border-radius: 20px;
 }
 
 /* ========================================
@@ -1015,6 +985,24 @@ body {
     color: rgba(255,255,255,0.6);
     font-size: 0.9rem;
     margin-bottom: 10px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.footer-social a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    color: var(--color-primary-light);
 }
 
 .footer-bottom {
@@ -1184,6 +1172,11 @@ body {
         font-size: 2.5rem;
     }
     
+    .hero-pill {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+    
     .about-grid {
         grid-template-columns: 1fr;
     }
@@ -1248,14 +1241,13 @@ body {
     .about-stats {
         justify-content: center;
     }
-}
-.contacts-map {
-    height: 450px;
-    width: 100%;
-}
-
-@media (max-width: 768px) {
+    
+    .contacts-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
     .contacts-map {
-        height: 350px;
+        min-height: 350px;
+        order: -1;
     }
 }
