@@ -3,166 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Aesthetics — Салон красоты в Донецке</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <title>SK Aesthetics — Центр красоты и здоровья в Донецке</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- ===== ШАПКА (HEADER) ===== -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>SK Aesthetics</h1>
-                    <p class="logo-sub">Центр красоты и здоровья</p>
-                </div>
-                <a href="tel:+79493063333" class="btn btn-primary">📞 Записаться</a>
+    <!-- Навигация -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">SK Aesthetics</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services" class="nav-link">Услуги</a></li>
+                <li><a href="#about" class="nav-link">О нас</a></li>
+                <li><a href="#gallery" class="nav-link">Фото</a></li>
+                <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                <li><a href="tel:+79493063333" class="nav-phone">+7 (949) 306-33-33</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge reveal">Салон красоты в Донецке</div>
+            <h1 class="hero-title reveal delay-1">
+                Ваш центр<br>
+                <span class="accent">красоты</span> и здоровья
+            </h1>
+            <p class="hero-subtitle reveal delay-2">
+                Современный салон, где профессиональный уход за лицом и телом<br>
+                сочетается с передовыми технологиями косметологии
+            </p>
+            <div class="hero-buttons reveal delay-3">
+                <a href="#services" class="btn btn-primary">Наши услуги</a>
+                <a href="https://t.me/SKAesthetics" target="_blank" class="btn btn-outline">Записаться</a>
             </div>
-            <div class="hero">
-                <h2>Ваш идеальный образ начинается здесь</h2>
-                <p>Современный салон красоты в Донецке. Профессиональный уход, передовые технологии и стильные решения для всей семьи.</p>
-                <div class="hero-badge">
-                    <span>🕒 09:00 – 20:00</span>
-                    <span>📍 просп. Ильича, 17В</span>
+            <div class="hero-features reveal delay-4">
+                <div class="feature-item">
+                    <span class="feature-icon">🅿️</span>
+                    <span>Парковка</span>
                 </div>
+                <div class="feature-item">
+                    <span class="feature-icon">♿</span>
+                    <span>Доступная среда</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">👶</span>
+                    <span>Детская комната</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💳</span>
+                    <span>Карта / Наличные</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
         </div>
     </header>
 
-    <!-- ===== УСЛУГИ (SERVICES) ===== -->
-    <section class="services">
+    <!-- О салоне -->
+    <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">Наши <span>услуги</span></h2>
-            <p class="section-subtitle">Широкий спектр процедур для вашей красоты</p>
-
-            <div class="services-grid">
-
-                <div class="service-card">
-                    <div class="service-icon">🧬</div>
-                    <h3>Косметология</h3>
-                    <ul>
-                        <li>Чистка лица — <span class="price">[реальная цена]</span></li>
-                        <li>RF-лифтинг — <span class="price">[реальная цена]</span></li>
-                        <li>Биоревитализация — <span class="price">[реальная цена]</span></li>
-                        <li>Плазмолифтинг — <span class="price">[реальная цена]</span></li>
-                        <li>Лазерная липосакция — <span class="price">[реальная цена]</span></li>
-                        <li>Перманентный макияж — <span class="price">[реальная цена]</span></li>
-                    </ul>
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="image-frame">
+                        <div class="image-placeholder">
+                            <span>Фото интерьера</span>
+                            <small>800 × 600</small>
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-number">10+</span>
+                        <span class="exp-text">лет опыта</span>
+                    </div>
                 </div>
-
-                <div class="service-card">
-                    <div class="service-icon">✂️</div>
-                    <h3>Парикмахерский сервис</h3>
-                    <ul>
-                        <li>Стрижки (женские/мужские/детские) — <span class="price">[реальная цена]</span></li>
-                        <li>Окрашивание и колорирование — <span class="price">[реальная цена]</span></li>
-                        <li>Кератиновое выпрямление — <span class="price">[реальная цена]</span></li>
-                        <li>Химическая завивка — <span class="price">[реальная цена]</span></li>
-                        <li>Африканские косички — <span class="price">[реальная цена]</span></li>
-                        <li>Лечение волос — <span class="price">[реальная цена]</span></li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">💅</div>
-                    <h3>Маникюр и педикюр</h3>
-                    <ul>
-                        <li>Женский/мужской маникюр — <span class="price">[реальная цена]</span></li>
-                        <li>Детский маникюр — <span class="price">[реальная цена]</span></li>
-                        <li>SPA-маникюр — <span class="price">[реальная цена]</span></li>
-                        <li>Дизайн и наращивание — <span class="price">[реальная цена]</span></li>
-                        <li>Педикюр (женский/мужской) — <span class="price">[реальная цена]</span></li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Дополнительные услуги</h3>
-                    <ul>
-                        <li>Эпиляция и депиляция — <span class="price">[реальная цена]</span></li>
-                        <li>Наращивание ресниц — <span class="price">[реальная цена]</span></li>
-                        <li>Ламинирование ресниц — <span class="price">[реальная цена]</span></li>
-                        <li>Макияж (дневной/вечерний) — <span class="price">[реальная цена]</span></li>
-                        <li>Массаж (общий/антицеллюлитный) — <span class="price">[реальная цена]</span></li>
-                        <li>Прокол ушей — <span class="price">[реальная цена]</span></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ПРЕИМУЩЕСТВА (ADVANTAGES) ===== -->
-    <section class="advantages">
-        <div class="container">
-            <h2 class="section-title">Почему <span>выбирают нас</span></h2>
-            <div class="adv-grid">
-                <div class="adv-item">
-                    <span class="adv-icon">🅿️</span>
-                    <h4>Удобная парковка</h4>
-                    <p>Бесплатная парковка для клиентов</p>
-                </div>
-                <div class="adv-item">
-                    <span class="adv-icon">🚪</span>
-                    <h4>Доступная среда</h4>
-                    <p>Пандус, кнопка вызова, автодверь</p>
-                </div>
-                <div class="adv-item">
-                    <span class="adv-icon">👶</span>
-                    <h4>Детская комната</h4>
-                    <p>Ваш ребёнок под присмотром</p>
-                </div>
-                <div class="adv-item">
-                    <span class="adv-icon">💳</span>
-                    <h4>Удобная оплата</h4>
-                    <p>Наличные и банковские карты</p>
-                </div>
-                <div class="adv-item">
-                    <span class="adv-icon">🎁</span>
-                    <h4>Акции и сертификаты</h4>
-                    <p>Подарочные сертификаты и скидки</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== КОНТАКТЫ (CONTACTS) ===== -->
-    <section class="contacts">
-        <div class="container">
-            <h2 class="section-title">Наши <span>контакты</span></h2>
-            <div class="contacts-grid">
-                <div class="contact-info">
-                    <p><strong>📍 Адрес:</strong> г. Донецк, просп. Ильича, 17В</p>
-                    <p><strong>📞 Телефон:</strong> <a href="tel:+79493063333">+7 (949) 306-33-33</a></p>
-                    <p><strong>🕒 Режим работы:</strong> Ежедневно с 09:00 до 20:00</p>
-                </div>
-                <div class="contact-social">
-                    <p><strong>Мы в соцсетях:</strong></p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="Telegram">✈️</a>
-                        <a href="#" class="social-link" title="VK">📘</a>
+                <div class="about-content reveal-right">
+                    <span class="section-label">О салоне</span>
+                    <h2 class="section-title">Мы создаём <span class="accent">красоту</span><br>с заботой о вас</h2>
+                    <p class="about-text">
+                        SK Aesthetics — это пространство, где каждая деталь продумана для вашего комфорта. 
+                        Уютная детская комната, адаптированный вход с пандусом, автоматические двери и 
+                        бесплатный Wi-Fi на всей территории.
+                    </p>
+                    <p class="about-text">
+                        Работаем ежедневно с 09:00 до 20:00. Принимаем оплату картой и наличными. 
+                        Действуют акции, скидки и подарочные сертификаты.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">Видов услуг</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2000">0</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-label">Мастеров</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <a href="tel:+79493063333" class="btn btn-primary btn-large">📞 Связаться с нами</a>
         </div>
     </section>
 
-    <!-- ===== ПОДВАЛ (FOOTER) ===== -->
-    <footer>
+    <!-- Услуги -->
+    <section class="services" id="services">
         <div class="container">
-            <div class="footer-content">
-                <p>© 2026 SK Aesthetics. Все права защищены.</p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social-link" title="Telegram">✈️</a>
-                    <a href="#" class="footer-social-link" title="VK">📘</a>
-                    <a href="#" class="footer-social-link" title="WhatsApp">💬</a>
+            <div class="section-header reveal">
+                <span class="section-label">Наши услуги</span>
+                <h2 class="section-title">Полный спектр <span class="accent">ухода</span></h2>
+                <p class="section-subtitle">Профессиональные процедуры для лица, тела и волос</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Косметология -->
+                <div class="service-card reveal delay-1">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <span>Косметология</span>
+                            <small>600 × 400</small>
+                        </div>
+                        <div class="service-overlay">
+                            <span class="service-count">12 процедур</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">🧬</div>
+                        <h3>Косметология</h3>
+                        <ul class="service-list">
+                            <li>Фракционная шлифовка <span class="price">[цена]</span></li>
+                            <li>Карбоновый пилинг <span class="price">[цена]</span></li>
+                            <li>Лазерное омоложение <span class="price">[цена]</span></li>
+                            <li>RF-лифтинг <span class="price">[цена]</span></li>
+                            <li>Безъигольная мезотерапия <span class="price">[цена]</span></li>
+                            <li>Инъекционный липолиз <span class="price">[цена]</span></li>
+                            <li>Контурная пластика <span class="price">[цена]</span></li>
+                            <li>Биоревитализация <span class="price">[цена]</span></li>
+                            <li>Плазмолифтинг <span class="price">[цена]</span></li>
+                            <li>Лазерная липосакция <span class="price">[цена]</span></li>
+                            <li>Перманентный макияж <span class="price">[цена]</span></li>
+                        </ul>
+                        <button class="btn btn-small">Подробнее</button>
+                    </div>
                 </div>
+
+                <!-- Парикмахер -->
+                <div class="service-card reveal delay-2">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <span>Парикмахер</span>
+                            <small>600 × 400</small>
+                        </div>
+                        <div class="service-overlay">
+                            <span class="service-count">8 услуг</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">✂️</div>
+                        <h3>Парикмахерский сервис</h3>
+                        <ul class="service-list">
+                            <li>Стрижка горячими ножницами <span class="price">[цена]</span></li>
+                            <li>Детская стрижка <span class="price">[цена]</span></li>
+                            <li>Вечерняя / свадебная укладка <span class="price">[цена]</span></li>
+                            <li>Кератиновое выпрямление <span class="price">[цена]</span></li>
+                            <li>Окрашивание / колорирование <span class="price">[цена]</span></li>
+                            <li>Химическая завивка <span class="price">[цена]</span></li>
+                            <li>Биоламинирование <span class="price">[цена]</span></li>
+                            <li>Африканские / французские косички <span class="price">[цена]</span></li>
+                        </ul>
+                        <button class="btn btn-small">Подробнее</button>
+                    </div>
+                </div>
+
+                <!-- Маникюр -->
+                <div class="service-card reveal delay-3">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <span>Маникюр</span>
+                            <small>600 × 400</small>
+                        </div>
+                        <div class="service-overlay">
+                            <span class="service-count">6 услуг</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">💅</div>
+                        <h3>Маникюр и педикюр</h3>
+                        <ul class="service-list">
+                            <li>Женский маникюр <span class="price">[цена]</span></li>
+                            <li>Мужской маникюр <span class="price">[цена]</span></li>
+                            <li>Детский маникюр <span class="price">[цена]</span></li>
+                            <li>SPA-маникюр <span class="price">[цена]</span></li>
+                            <li>Наращивание ногтей <span class="price">[цена]</span></li>
+                            <li>Дизайн ногтей <span class="price">[цена]</span></li>
+                        </ul>
+                        <button class="btn btn-small">Подробнее</button>
+                    </div>
+                </div>
+
+                <!-- Доп услуги -->
+                <div class="service-card wide reveal delay-1">
+                    <div class="service-image">
+                        <div class="image-placeholder">
+                            <span>Дополнительные услуги</span>
+                            <small>1200 × 400</small>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">✨</div>
+                        <h3>Дополнительные услуги</h3>
+                        <div class="extra-services">
+                            <div class="extra-item">
+                                <span class="extra-name">Эпиляция / депиляция</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name">Наращивание ресниц</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name">Ламинирование ресниц</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name">Макияж (дневной / вечерний)</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name">Массаж (общий, антицеллюлитный)</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name">Прокол ушей</span>
+                                <span class="price">[цена]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-card-icon">👶</div>
+                    <h4>Детская комната</h4>
+                    <p>Уютное пространство, где ваш ребёнок играет, пока вы отдыхаете</p>
+                </div>
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-card-icon">♿</div>
+                    <h4>Доступная среда</h4>
+                    <p>Пандус, кнопка вызова, автоматические двери для всех гостей</p>
+                </div>
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-card-icon">📶</div>
+                    <h4>Бесплатный Wi-Fi</h4>
+                    <p>Высокоскоростной интернет на всей территории салона</p>
+                </div>
+                <div class="feature-card reveal delay-3">
+                    <div class="feature-card-icon">🎁</div>
+                    <h4>Акции и сертификаты</h4>
+                    <p>Подарочные карты, скидки и специальные предложения</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Галерея</span>
+                <h2 class="section-title">Наши <span class="accent">работы</span></h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large reveal">
+                    <div class="image-placeholder">
+                        <span>Работа 1</span>
+                        <small>800 × 600</small>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-1">
+                    <div class="image-placeholder">
+                        <span>Работа 2</span>
+                        <small>400 × 300</small>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-2">
+                    <div class="image-placeholder">
+                        <span>Работа 3</span>
+                        <small>400 × 300</small>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-1">
+                    <div class="image-placeholder">
+                        <span>Работа 4</span>
+                        <small>400 × 300</small>
+                    </div>
+                </div>
+                <div class="gallery-item reveal delay-2">
+                    <div class="image-placeholder">
+                        <span>Работа 5</span>
+                        <small>400 × 300</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts" id="contacts">
+        <div class="container">
+            <div class="contacts-wrapper">
+                <div class="contacts-info reveal-left">
+                    <span class="section-label">Контакты</span>
+                    <h2 class="section-title">Приходите к <span class="accent">нам</span></h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <span class="contact-label">Адрес</span>
+                            <p>г. Донецк, проспект Ильича, 17В<br>1-й этаж</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <span class="contact-label">Режим работы</span>
+                            <p>Ежедневно с 09:00 до 20:00<br>Без выходных</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <span class="contact-label">Телефон</span>
+                            <a href="tel:+79493063333" class="contact-link">+7 (949) 306-33-33</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://vk.com/SKAesthetics" target="_blank" class="social-link vk">
+                            <span>VK</span>
+                        </a>
+                        <a href="https://t.me/SKAesthetics" target="_blank" class="social-link tg">
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contacts-map reveal-right">
+                    <div class="map-placeholder">
+                        <span>🗺️ Карта</span>
+                        <small>Яндекс.Карты / Google Maps</small>
+                        <p>вставьте iframe карт здесь</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">✦</span>
+                        <span class="logo-text">SK Aesthetics</span>
+                    </a>
+                    <p class="footer-desc">Современный центр красоты и здоровья в Донецке. Профессиональный уход с заботой о каждом госте.</p>
+                </div>
+                <div class="footer-nav">
+                    <h5>Услуги</h5>
+                    <ul>
+                        <li><a href="#services">Косметология</a></li>
+                        <li><a href="#services">Парикмахер</a></li>
+                        <li><a href="#services">Маникюр</a></li>
+                        <li><a href="#services">Массаж</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <h5>Информация</h5>
+                    <ul>
+                        <li><a href="#about">О салоне</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h5>Связь</h5>
+                    <p>📞 +7 (949) 306-33-33</p>
+                    <p>📍 пр. Ильича, 17В</p>
+                    <p>🕐 09:00 — 20:00 ежедневно</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SK Aesthetics. Все права защищены.</p>
+                <p>Сделано с ❤️ для красоты</p>
             </div>
         </div>
     </footer>
 
+    <!-- Кнопка наверх -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
     <script src="script.js"></script>
 </body>
-  </html>
+                        </html>
