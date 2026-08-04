@@ -1,5 +1,5 @@
 /* ========================================
-   SK Aesthetics — Beauty & Medicine Center
+   SK Aesthetics — Beauty Salon Website
    ======================================== */
 
 :root {
@@ -115,7 +115,6 @@ img, iframe, video, embed, object {
     color: var(--color-text-light);
     font-size: 1.05rem;
     max-width: 500px;
-    margin: 0 auto;
 }
 
 /* ========================================
@@ -564,19 +563,13 @@ img, iframe, video, embed, object {
 }
 
 /* ========================================
-   Services Section (Beauty & Medical)
+   Services Section
    ======================================== */
 
 .services {
     padding: 120px 0;
     background: var(--color-bg);
     overflow: hidden;
-}
-
-.medicine-section {
-    background: var(--color-white);
-    border-top: 1px solid rgba(201, 169, 110, 0.1);
-    border-bottom: 1px solid rgba(201, 169, 110, 0.1);
 }
 
 .section-header {
@@ -987,7 +980,7 @@ img, iframe, video, embed, object {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.3fr;
     gap: 48px;
     margin-bottom: 60px;
     width: 100%;
